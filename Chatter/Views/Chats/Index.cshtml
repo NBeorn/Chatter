@@ -19,10 +19,13 @@
             [{"firstName" : "Barbie", "age" : 19},{ "firstName" : "Ron", "age" : null}] }
         //now some jQuery
         //$("#response").text(jsonTest.children);
-        $.each(jsonTest.children, function () {
-            $.each(this, function (name, value) {
-                $("#response").append("<p>" + name + ': ' + value + " " + "</p>");
-            });
+        //$.each(jsonTest.children, function () {
+        //    $.each(this, function (name, value) {
+        //        $("#response").append("<p>" + name + ': ' + value + " " + "</p>");
+        //    });
+        //});
+        $.get("@Url.Action("TestJson","Chats")", function (response) {
+            alert(response);
         });
         
     </script>    
