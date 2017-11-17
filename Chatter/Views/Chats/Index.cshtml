@@ -24,10 +24,14 @@
         //        $("#response").append("<p>" + name + ': ' + value + " " + "</p>");
         //    });
         //});
-        $.get("@Url.Action("TestJson","Chats")", function (response) {
-            alert(response);
-        });
-        
+        $.get("@Url.Action("TestJson","Chats")", function (serverResponse) {
+            var jsonTest = JSON.parse(serverResponse);
+            console.log(jsonTest);
+            $("#getChats").click(function () {
+                $("#response").append(jsonTest.firstName);
+            });
+            
+        });        
     </script>    
 }
 @*<table class="table">
